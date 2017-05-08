@@ -25,7 +25,7 @@
     - src: "journalbeat.service.j2"
       dest: "/etc/systemd/system/journalbeat.service"
     - src: "journalbeat.yml.j2"
-      dest: "/etc/sysconfig/journalbeat.yml"
+      dest: "/etc/journalbeat.yml"
   notify:
     - reload systemd
     - restart journalbeat
