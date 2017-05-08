@@ -1,0 +1,22 @@
+---
+journalbeat_gopath: "/usr/local/go"
+journalbeat_gobin: "/usr/local/go/bin"
+
+journalbeat_gitremote: "https://github.com/mheese/journalbeat.git"
+journalbeat_version: "96a1170090f950e7ef55f2285e3597f3c2a62ad3"
+journalbeat_srcpath: "{{ journalbeat_gopath }}/src/github.com/mheese/journalbeat"
+journalbeat_bin: "{{ journalbeat_gobin }}/journalbeat"
+
+journalbeat_conf:
+  name: journalbeat
+  output.elasticsearch:
+    enabled: false
+  output.logstash:
+    enabled: false
+  output.kafka:
+    enabled: false
+  output.redis:
+    enabled: false
+  output.file:
+    enabled: false
+
