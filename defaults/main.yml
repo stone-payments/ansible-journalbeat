@@ -1,11 +1,6 @@
 ---
-journalbeat_gopath: "/usr/local/go"
-journalbeat_gobin: "/usr/local/go/bin"
-
-journalbeat_gitremote: "https://github.com/mheese/journalbeat.git"
-journalbeat_version: "96a1170090f950e7ef55f2285e3597f3c2a62ad3"
-journalbeat_srcpath: "{{ journalbeat_gopath }}/src/github.com/mheese/journalbeat"
-journalbeat_bin: "{{ journalbeat_gobin }}/journalbeat"
+journalbeat_repo: "https://copr-be.cloud.fedoraproject.org/results/bcdonadio/journalbeat/epel-7-$basearch/"
+journalbeat_repokey: "https://copr-be.cloud.fedoraproject.org/results/bcdonadio/journalbeat/pubkey.gpg"
 
 journalbeat_conf:
   name: journalbeat

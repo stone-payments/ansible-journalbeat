@@ -12,4 +12,4 @@ galaxy_info:
   galaxy_tags:
   - clustering
   - monitoring
-dependencies: [ "stone-payments.golang" ]
+dependencies: []

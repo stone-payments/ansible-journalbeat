@@ -1,33 +1,24 @@
 ---
-- name: synchronize journalbeat repo
-  git:
-    repo: "https://github.com/mheese/journalbeat.git"
-    dest: "/usr/local/go/src/github.com/mheese/journalbeat.git"
-    version: "{{ journalbeat_version }}"
-    update: true
-  register: newRelease
+- name: install journalbeat repo
+  yum_repository:
+    name: journalbeat
+    description: "Journalbeat repository"
+    baseurl: "{{ journalbeat_repo }}"
+    gpgkey: "{{ journalbeat_repokey }}"
 
-- name: build and install journalbeat
-  shell: "export GOPATH=/usr/local/go && export GOBIN=${GOPATH}/bin && cd /usr/local/go/src/github.com/mheese/journalbeat && go get && go install"
-  when: newRelease.changed or journalbeat_reinstall is defined
+- name: install journalbeat
+  package:
+    name: journalbeat
+    state: present
 
-- name: ensure executable files
-  file:
-    path: "/usr/local/go/bin/journalbeat"
-    owner: root
-    mode: "0755"
-
-- name: copy service file
+- name: setup journalbeat config
   template:
     src: "{{ item.src }}"
     dest: "{{ item.dest }}"
   with_items:
-    - src: "journalbeat.service.j2"
-      dest: "/etc/systemd/system/journalbeat.service"
     - src: "journalbeat.yml.j2"
       dest: "/etc/journalbeat.yml"
   notify:
-    - reload systemd
     - restart journalbeat
 
 - meta: flush_handlers

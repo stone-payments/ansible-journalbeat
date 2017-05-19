@@ -1,7 +1,4 @@
 ---
-- name: reload systemd
-  shell: sytemctl daemon-reload
-
 - name: restart journalbeat
   service:
     name: journalbeat
