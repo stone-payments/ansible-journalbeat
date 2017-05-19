@@ -5,6 +5,7 @@ journalbeat_default_conf:
   fields:
     env: "{{ journalbeat_env }}"
     net: "{{ journalbeat_net }}"
+    dc:  "{{ journalbeat_dc }}"
   fields_under_root: true
   journalbeat:
     clean_field_names: true
