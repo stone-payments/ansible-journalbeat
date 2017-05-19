@@ -9,6 +9,7 @@ journalbeat_kafka: false
 journalbeat_redis: false
 journalbeat_defaultType: "journal"
 journalbeat_tags: []
+journalbeat_product: "undefined"
 journalbeat_env: "undefined"
 journalbeat_net: "undefined"
 journalbeat_dc: "undefined"

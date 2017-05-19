@@ -3,6 +3,7 @@ journalbeat_default_conf:
   name: "journalbeat"
   tags: "{{ journalbeat_tags }}"
   fields:
+    product: "{{ journalbeat_product }}"
     env: "{{ journalbeat_env }}"
     net: "{{ journalbeat_net }}"
     dc:  "{{ journalbeat_dc }}"
