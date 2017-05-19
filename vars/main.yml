@@ -1,0 +1,39 @@
+---
+journalbeat_default_conf:
+  name: "journalbeat"
+  tags: "{{ journalbeat_tags }}"
+  fields:
+    env: "{{ journalbeat_env }}"
+  fields_under_root: true
+  journalbeat:
+    clean_field_names: true
+    convert_to_numbers: true
+    default_type: "{{ journalbeat_defaultType }}"
+    cursor_state_file: "/tmp/journalbeat/cursor_state"
+  output:
+    elasticsearch:
+      enabled: "{{ journalbeat_elasticsearch }}"
+      hosts: "{{ journalbeat_hosts }}"
+      compression_level: "{{ journalbeat_compressionLevel }}"
+      worker: "{{ journalbeat_worker }}"
+      loadbalance: "{{ journalbeat_loadBalance }}"
+      index: "{{ journalbeat_index }}"
+    logstash:
+      enabled: "{{ journalbeat_logstash }}"
+      hosts: "{{ journalbeat_hosts }}"
+      compression_level: "{{ journalbeat_compressionLevel }}"
+      worker: "{{ journalbeat_worker }}"
+      loadbalance: "{{ journalbeat_loadBalance }}"
+      index: "{{ journalbeat_index }}"
+    kafka:
+      enabled: "{{ journalbeat_kafka }}"
+      hosts: "{{ journalbeat_hosts }}"
+      worker: "{{ journalbeat_worker }}"
+      loadbalance: "{{ journalbeat_loadBalance }}"
+      topic: "{{ journalbeat_index }}"
+    redis:
+      enabled: "{{ journalbeat_redis }}"
+      hosts: "{{ journalbeat_hosts }}"
+      worker: "{{ journalbeat_worker }}"
+      loadbalance: "{{ journalbeat_loadBalance }}"
+      key: "{{ journalbeat_index }}"
