@@ -10,6 +10,7 @@ journalbeat_redis: false
 journalbeat_defaultType: "journal"
 journalbeat_tags: []
 journalbeat_env: "undefined"
+journalbeat_net: "undefined"
 journalbeat_hosts: []
 journalbeat_compressionLevel: 3
 journalbeat_worker: 1
