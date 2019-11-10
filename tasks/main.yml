@@ -17,7 +17,7 @@
     dest: "{{ item.dest }}"
   with_items:
     - src: "journalbeat.yml.j2"
-      dest: "/etc/journalbeat.yml"
+      dest: "{{ journalbeat_config_dest }}"
   notify:
     - restart journalbeat
 
