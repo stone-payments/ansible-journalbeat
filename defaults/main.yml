@@ -1,6 +1,7 @@
 ---
 journalbeat_repo: "https://copr-be.cloud.fedoraproject.org/results/bcdonadio/journalbeat/epel-7-$basearch/"
 journalbeat_repokey: "https://copr-be.cloud.fedoraproject.org/results/bcdonadio/journalbeat/pubkey.gpg"
+journalbeat_repo_enable: true
 
 # Use the following variables to simplified setup
 journalbeat_elasticsearch: false

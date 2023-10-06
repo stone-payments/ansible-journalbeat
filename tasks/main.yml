@@ -5,6 +5,7 @@
     description: "Journalbeat repository"
     baseurl: "{{ journalbeat_repo }}"
     gpgkey: "{{ journalbeat_repokey }}"
+  when: journalbeat_repo_enable
 
 - name: install journalbeat
   package:
